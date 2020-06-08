@@ -5,15 +5,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class NewSeleniumTest {
-public static void main(String args[]) {
+public static void main(String a[]) {
 int code = 0;
-String baseURL = "http://34.221.243.81:9000/";
+String URL_output = a[0];
+System.out.println(URL_output);
+//String baseURL = "http://34.221.243.81:9000/";
 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 ChromeOptions chromeOptions = new ChromeOptions();
 chromeOptions.addArguments("--headless");
 chromeOptions.addArguments("--no-sandbox");
 WebDriver driver = new ChromeDriver(chromeOptions);
-driver.get(baseURL + "/petclinic-Dev/owners/find.html");
+driver.get(URL_output);
 
 driver.findElement(By.xpath("//a[@class='btn btn-default']")).click();
 	driver.findElement(By.xpath("//input[@id='firstName']")).clear();
@@ -29,7 +31,7 @@ driver.findElement(By.xpath("//a[@class='btn btn-default']")).click();
 	driver.findElement(By.xpath("//button[@class='btn btn-default']")).click();
 	System.out.println("user addition successful !");
 
-driver.navigate().to(baseURL + "/petclinic-Dev/owners/find.html");
+driver.navigate().to(URL_output);
 driver.findElement(By.xpath("//button[@class='btn btn-default']")).click();
 WebElement Owner = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]"));
 String outputValue = Owner.getText();
