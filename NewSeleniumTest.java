@@ -35,7 +35,7 @@ driver.navigate().to(URL_output);
 driver.findElement(By.xpath("//button[@class='btn btn-default']")).click();
 WebElement Owner = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]"));
 String outputValue = Owner.getText();
-if(outputValue.contains("Addison Jefferson")) {
+if(outputValue.contains("Thomas Jefferson")) {
 	System.out.println("Owner Found");
 }else {
 	System.out.println("Owner not found");
